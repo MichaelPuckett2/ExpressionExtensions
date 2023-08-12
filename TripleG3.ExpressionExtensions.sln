@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "G3.ExpressionExtensions", "ExpressionExtensions\G3.ExpressionExtensions.csproj", "{813C15BB-5395-4240-B774-BE09867950B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TripleG3.ExpressionExtensions", "ExpressionExtensions\TripleG3.ExpressionExtensions.csproj", "{813C15BB-5395-4240-B774-BE09867950B3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "G3.ExpressionExtensionsTests", "ExpressionExtensionsTests\G3.ExpressionExtensionsTests.csproj", "{6507A377-BF4A-4837-A6ED-47B8928A209F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TripleG3.ExpressionExtensionsTests", "ExpressionExtensionsTests\TripleG3.ExpressionExtensionsTests.csproj", "{6507A377-BF4A-4837-A6ED-47B8928A209F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

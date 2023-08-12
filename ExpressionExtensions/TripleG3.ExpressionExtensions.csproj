@@ -16,6 +16,7 @@
 		<RepositoryType>git</RepositoryType>
 		<PackageTags>Expression extensions; GetMemberName; MemberName; Member Name</PackageTags>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
+		<PackageId>TripleG3.ExpressionExtensions</PackageId>
 	</PropertyGroup>
 
 	<ItemGroup>

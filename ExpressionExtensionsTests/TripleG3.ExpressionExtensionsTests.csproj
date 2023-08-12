@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ExpressionExtensions\G3.ExpressionExtensions.csproj" />
+    <ProjectReference Include="..\ExpressionExtensions\TripleG3.ExpressionExtensions.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,9 +1,8 @@
-﻿using ExpressionExtensionsTests;
-using G3.ExpressionExtensions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq.Expressions;
+using TripleG3.ExpressionExtensions;
 
-namespace ExpressionExtensions.Tests
+namespace TripleG3.ExpressionExtensionsTests
 {
     [TestClass()]
     public class ExtensionsTests
