@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace ExpressionExtensions
+namespace G3.ExpressionExtensions
 {
     [Serializable]
     public class LambdaExpressionMemberNotFoundException : Exception
