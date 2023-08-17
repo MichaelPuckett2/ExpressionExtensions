@@ -29,13 +29,12 @@ public static class Extensions
         result = memberExpression.Member.Name;
         return result;
     }
+
     public static IEnumerable<TResult> Join<TOuter, TInner, TKey, TResult>(this IEnumerable<TOuter> outer,
                                                                            IEnumerable<TInner> inner,
                                                                            Func<TOuter, TKey> outerKeySelector,
                                                                            Func<TInner, TKey> innerKeySelector,
                                                                            Func<TOuter, TInner, TResult> resultSelector,
-                                                                           G3EqualityComparer<TKey>? comparer)
-        => Join(outer, inner, outerKeySelector, innerKeySelector, resultSelector, comparer);
-
-
+                                                                           Expression<Func<TKey, TKey, bool>> expression)
+        => outer.Join(inner, outerKeySelector, innerKeySelector, resultSelector, (G3EqualityComparer<TKey>)expression);
 }

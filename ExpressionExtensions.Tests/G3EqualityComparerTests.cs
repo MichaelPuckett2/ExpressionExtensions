@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq.Expressions;
 using System.Text;
-using TripleG3.ExpressionExtensionsTests;
 
 namespace TripleG3.ExpressionExtensions.Tests;
 
