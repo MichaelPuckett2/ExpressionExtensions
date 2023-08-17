@@ -42,7 +42,7 @@ public class G3EqualityComparerTests
         //Arrange
         var personA = new Person("A", "Person", default);
         var expected = personA.GetHashCode();
-        var actor = new G3EqualityComparer<Person>((a, b) => a == b);
+        var actor = new G3EqualityComparer<Person>((a, b) => a == b, personA.GetHashCode);
 
         //Act
         var actual = actor.GetHashCode(personA);

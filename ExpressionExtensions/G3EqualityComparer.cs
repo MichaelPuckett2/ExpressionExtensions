@@ -6,9 +6,17 @@ namespace TripleG3.ExpressionExtensions;
 public class G3EqualityComparer<T> : IEqualityComparer<T>
 {
     private readonly Func<T?, T?, bool> equals;
-    public G3EqualityComparer(Func<T?, T?, bool> equals) => this.equals = equals;
+    private Func<int> getHashCode;
+
+    public G3EqualityComparer(Func<T?, T?, bool> equals) : this(equals, () => 0) { }
+    public G3EqualityComparer(Func<T?, T?, bool> equals, Func<int> getHashCode)
+    {
+        this.equals = equals;
+        this.getHashCode = getHashCode;
+    }
+
     public bool Equals(T? x, T? y) => equals.Invoke(x, y);
-    public int GetHashCode([DisallowNull] T obj) => obj.GetHashCode();
+    public int GetHashCode([DisallowNull] T obj) => getHashCode.Invoke();
     public static implicit operator G3EqualityComparer<T>(Func<T?, T?, bool> equals) => new(equals);
 
     public static implicit operator G3EqualityComparer<T>(LambdaExpression expression)
