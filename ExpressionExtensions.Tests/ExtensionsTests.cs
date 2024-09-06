@@ -26,6 +26,25 @@ public class ExtensionsTests
     }
 
     [TestMethod]
+    public void GetMemberNameNullPropigatingTest()
+    {
+        //Arrange
+        const string expected = nameof(PersonNullableName.FirstName);
+        var person = new PersonNullableName("Test", "User", 50);
+
+        static string ScopedMethod(Expression<Func<PersonNullableName, string>> expression)
+        {
+            return expression.GetMemberName();
+        }
+
+        //Act
+        var actual = ScopedMethod(person => person.FirstName ?? string.Empty);
+
+        //Assert
+        Assert.AreEqual(expected, actual);
+    }
+
+    [TestMethod]
     public void JoinTest()
     {
         //Arrange
@@ -51,10 +70,10 @@ public class ExtensionsTests
 
         //Act
         var result = people.Join(employees,
-                                   person => person.LastName,
-                                   employee => employee.LastName,
-                                   (Person, Employee) => new { Person, Employee },
-                                   (a, b) => a == b);
+                                 person => person.LastName,
+                                 employee => employee.LastName,
+                                 (Person, Employee) => new { Person, Employee },
+                                 (a, b) => a == b);
 
         //Assert
         CollectionAssert.AreEquivalent(result.Select(x => x.Person.LastName).ToList(), result.Select(x => x.Employee.LastName).ToList());

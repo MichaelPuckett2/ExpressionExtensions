@@ -22,6 +22,14 @@ public static class Extensions
         {
             memberExpression = lambdaMemberExpression;
         }
+        else if (lambdaExpression.Body is BinaryExpression binaryExpression)
+        {
+            memberExpression = binaryExpression.Left is MemberExpression leftPropertyExpression
+                             ? leftPropertyExpression
+                             : binaryExpression.Right is MemberExpression rightPropertyExpression
+                             ? rightPropertyExpression
+                             : throw new LambdaExpressionMemberNotFoundException($"Could not get member name {lambdaExpression.Name ?? string.Empty}");
+        }
         else
         {
             throw new LambdaExpressionMemberNotFoundException($"Could not get member name {lambdaExpression.Name ?? string.Empty}");
